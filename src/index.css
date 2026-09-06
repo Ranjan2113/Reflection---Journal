@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-parchment-50: #FCFAF7;
+  --color-parchment-100: #FBF8F3;
+  --color-parchment-200: #F3ECE2;
+  --color-parchment-300: #E8DFD3;
+  --color-parchment-400: #D8CCBE;
+  --color-editorial-ink: #2D2926;
+  --color-editorial-muted: #6E675F;
+  --color-editorial-bronze: #A67C52;
+  --color-editorial-bronze-dark: #8C6239;
+  --color-editorial-border: #E5E0D8;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-editorial-ink);
+  background-color: var(--color-parchment-100);
+}
+
+.font-editorial-serif {
+  font-family: 'Newsreader', Georgia, serif;
+  font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+.font-editorial-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+/* Custom scrollbar matching editorial aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CCBE;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A67C52;
+}
