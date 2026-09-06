@@ -10,7 +10,9 @@ import {
   User as FirebaseUser 
 } from 'firebase/auth';
 import { getFirestore, Firestore } from 'firebase/firestore';
-import firebaseConfig from '../../firebase-applet-config.json';
+import { buildFirebaseConfig } from './firebaseConfig';
+
+const firebaseConfig = buildFirebaseConfig(import.meta.env as Record<string, string | undefined>);
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 

@@ -6,3 +6,7 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Firebase applet config — contains real project identifiers.
+# Values now live in .env (see .env.example).
+firebase-applet-config.json

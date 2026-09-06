@@ -253,6 +253,25 @@ When a user deletes their account, the application executes a comprehensive, zer
 
 ## 📋 Prerequisites & Secret Management
 
+### Local Environment File
+
+All configuration is read from a git-ignored `.env` file. Copy the template and
+fill in your own values before running the app:
+
+```bash
+cp .env.example .env
+```
+
+| Variable | Scope | Notes |
+| :--- | :--- | :--- |
+| `GEMINI_API_KEY` | Server only | A real secret. Never exposed to the browser; sourced from Secret Manager in production. |
+| `APP_URL` | Server only | Public origin of the deployment. |
+| `VITE_FIREBASE_*` | Client bundle | Firebase web config. Public by design — protected by `firestore.rules` and API key referrer restrictions, not by secrecy. |
+
+`.env` is ignored by `.gitignore`; only `.env.example` (placeholders) is committed.
+
+### Google Cloud Setup
+
 1. **Google Cloud Project** with billing enabled:
    ```bash
    gcloud auth login

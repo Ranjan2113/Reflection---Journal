@@ -23,7 +23,7 @@ import {
   vector 
 } from 'firebase/firestore';
 import { GoogleGenAI } from '@google/genai';
-import firebaseConfig from '../firebase-applet-config.json';
+import { buildFirebaseConfig } from '../src/lib/firebaseConfig';
 
 dotenv.config();
 
@@ -34,6 +34,8 @@ if (!apiKey) {
 }
 
 const ai = new GoogleGenAI({ apiKey });
+
+const firebaseConfig = buildFirebaseConfig(process.env);
 
 // Initialize Firebase App
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
